@@ -1,0 +1,2369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8f5 0%,
+            #f3d6d8 45%,
+            #b9a3b8 100%
+        );
+
+    color: #8e5c68;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+/* =========================
+   HALAMAN PEMBUKA
+========================= */
+
+.opening {
+    width: 90%;
+    max-width: 500px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 10;
+
+    animation: appear 2s ease;
+}
+
+
+/* Hati utama */
+
+.heart-main {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 90px;
+
+    color: #b76e79;
+
+    margin-bottom: 5px;
+
+    animation:
+        heartbeat 2s infinite ease-in-out;
+}
+
+
+/* Judul */
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(55px, 15vw, 90px);
+
+    font-weight: 400;
+
+    color: #8e5c68;
+
+    margin-bottom: 15px;
+}
+
+
+/* Kalimat */
+
+p {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #80636c;
+
+    margin-bottom: 30px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Tombol */
+
+button {
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 248, 245, 0.75);
+
+    color: #8e5c68;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(142, 92, 104, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+
+    background: #fff8f5;
+
+    box-shadow:
+        0 12px 30px rgba(142, 92, 104, 0.25);
+}
+
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   HATI MELAYANG
+========================= */
+
+.floating-heart {
+    position: absolute;
+
+    font-size: 28px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    z-index: 2;
+
+    animation: floatHeart 8s infinite ease-in-out;
+}
+
+
+.heart-1 {
+    left: 12%;
+    bottom: -40px;
+    animation-delay: 0s;
+}
+
+
+.heart-2 {
+    left: 30%;
+    bottom: -50px;
+    font-size: 18px;
+    animation-delay: 2s;
+}
+
+
+.heart-3 {
+    right: 15%;
+    bottom: -40px;
+    font-size: 35px;
+    animation-delay: 4s;
+}
+
+
+.heart-4 {
+    right: 32%;
+    bottom: -50px;
+    font-size: 20px;
+    animation-delay: 1s;
+}
+
+
+.heart-5 {
+    left: 55%;
+    bottom: -40px;
+    font-size: 15px;
+    animation-delay: 5s;
+}
+
+
+/* =========================
+   ANIMASI
+========================= */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            rotate(15deg);
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================
+   HALAMAN 2
+========================= */
+
+.love-page {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8f5 0%,
+            #f5dfe1 45%,
+            #b9a3b8 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s;
+
+    z-index: 50;
+}
+
+
+.love-page.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+.love-content {
+    width: 100%;
+    max-width: 500px;
+
+    animation: loveAppear 1.2s ease;
+}
+
+
+.small-heart {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 55px;
+
+    color: #b76e79;
+
+    margin-bottom: 5px;
+}
+
+
+.love-content h2 {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(45px, 12vw, 75px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #8e5c68;
+
+    margin-bottom: 18px;
+}
+
+
+.love-question {
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #80636c;
+
+    margin-bottom: 10px;
+}
+
+
+.percentage {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 55px;
+
+    color: #a75f6d;
+
+    margin: 5px 0;
+}
+
+
+.big-heart-button {
+    border: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    padding: 5px;
+
+    font-size: 85px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.3s ease;
+}
+
+
+.big-heart-button:hover {
+    background: transparent;
+
+    box-shadow: none;
+}
+
+
+.big-heart-button:active {
+    transform: scale(0.75);
+}
+
+
+.big-heart-button.pop {
+    animation: heartPop 0.35s ease;
+}
+
+
+.tap-text {
+    font-size: 14px;
+
+    color: #97727b;
+
+    margin-top: 0;
+
+    margin-bottom: 10px;
+}
+
+
+.love-message {
+    min-height: 35px;
+
+    font-size: 15px;
+
+    color: #8e5c68;
+
+    font-weight: 600;
+
+    transition: opacity 0.3s ease;
+}
+
+
+.next-button {
+    display: none;
+
+    margin: 20px auto 0;
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 50px;
+
+    background: #fff8f5;
+
+    color: #8e5c68;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 25px rgba(142, 92, 104, 0.2);
+
+    cursor: pointer;
+
+    animation: appear 1s ease;
+}
+
+
+.next-button.show {
+    display: block;
+}
+
+
+/* =========================
+   ANIMASI HATI
+========================= */
+
+@keyframes heartPop {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.35);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes loveAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+/* =========================
+   LOVE ERROR
+========================= */
+
+.error-text {
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    animation: errorBlink 1s infinite;
+}
+
+
+.error-heart {
+    animation:
+        errorShake 0.5s infinite !important;
+}
+
+
+@keyframes errorShake {
+
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(-8deg) scale(1.1);
+    }
+
+    75% {
+        transform: rotate(8deg) scale(1.1);
+    }
+
+}
+
+
+@keyframes errorBlink {
+
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+}
+/* =========================
+   HALAMAN 3
+========================= */
+
+.memory-intro {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8f5 0%,
+            #f3d6d8 50%,
+            #c5adbf 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s;
+
+    z-index: 60;
+
+}
+
+
+.memory-intro.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+.memory-intro-content {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    animation: memoryAppear 1.2s ease;
+
+}
+
+
+.memory-flower {
+
+    font-size: 45px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.memory-intro h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(
+        50px,
+        14vw,
+        80px
+    );
+
+    font-weight: 400;
+
+    color: #8e5c68;
+
+    margin-bottom: 18px;
+
+}
+
+
+.memory-intro p {
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #80636c;
+
+    margin-bottom: 10px;
+
+}
+
+
+.memory-second-text {
+
+    margin-bottom: 20px !important;
+
+}
+
+
+/* =========================
+   FOTO PERTAMA
+========================= */
+
+.first-photo {
+
+    width: 180px;
+
+    height: 210px;
+
+    margin: 15px auto 20px;
+
+    padding: 8px;
+
+    background: #fff8f5;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            142,
+            92,
+            104,
+            0.18
+        );
+
+    transform: rotate(-3deg);
+
+}
+
+
+.photo-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #f5e4e5;
+
+    font-size: 45px;
+
+    color: #b76e79;
+
+}
+
+
+/* =========================
+   TOMBOL
+========================= */
+
+.memory-button {
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    background: #fff8f5;
+
+    color: #8e5c68;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            142,
+            92,
+            104,
+            0.2
+        );
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.memory-button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+@keyframes memoryAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+/* =========================
+   HALAMAN GALERI
+========================= */
+
+.gallery-page {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8f5 0%,
+            #f3d6d8 50%,
+            #b9a3b8 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s;
+
+    z-index: 70;
+
+}
+
+
+.gallery-page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+.gallery-content {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    animation: galleryAppear 1s ease;
+
+}
+
+
+.gallery-title-heart {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 45px;
+
+    color: #b76e79;
+
+}
+
+
+.gallery-content h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(
+        45px,
+        12vw,
+        70px
+    );
+
+    font-weight: 400;
+
+    color: #8e5c68;
+
+    margin-bottom: 5px;
+
+}
+
+
+.gallery-subtitle {
+
+    font-size: 15px;
+
+    color: #80636c;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.photo-slider {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 330px;
+
+}
+
+
+.photo-card {
+
+    display: none;
+
+    animation: photoAppear 0.6s ease;
+
+}
+
+
+.photo-card.active {
+
+    display: block;
+
+}
+
+
+.photo-frame {
+
+    width: min(
+        75vw,
+        300px
+    );
+
+    height: min(
+        75vw,
+        300px
+    );
+
+    margin: auto;
+
+    padding: 9px;
+
+    background: #fff8f5;
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            142,
+            92,
+            104,
+            0.22
+        );
+
+    transform: rotate(-2deg);
+
+}
+
+
+.photo-card:nth-child(2)
+.photo-frame {
+
+    transform: rotate(2deg);
+
+}
+
+
+.photo-card:nth-child(3)
+.photo-frame {
+
+    transform: rotate(-1deg);
+
+}
+
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.photo-caption {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 23px;
+
+    color: #8e5c68;
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================
+   NAVIGASI
+========================= */
+
+.gallery-navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 10px;
+
+}
+
+
+.gallery-arrow {
+
+    width: 42px;
+
+    height: 42px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: rgba(
+        255,
+        248,
+        245,
+        0.8
+    );
+
+    color: #8e5c68;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(
+            142,
+            92,
+            104,
+            0.15
+        );
+
+}
+
+
+.photo-indicator {
+
+    font-size: 13px;
+
+    color: #97727b;
+
+}
+
+
+.gallery-next {
+
+    margin-top: 15px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #fff8f5;
+
+    color: #8e5c68;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            142,
+            92,
+            104,
+            0.18
+        );
+
+}
+
+
+/* =========================
+   ANIMASI
+========================= */
+
+@keyframes photoAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes galleryAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+} 
+
+/* =========================
+   HALAMAN 5 - TERNYATA
+========================= */
+
+.realization-page {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8f5 0%,
+            #f3d6d8 48%,
+            #b9a3b8 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 1.2s;
+
+    z-index: 80;
+}
+
+
+.realization-page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+.realization-content {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    animation: realizationAppear 1.5s ease;
+
+}
+
+
+.realization-heart {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 55px;
+
+    color: #b76e79;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartbeat 2.5s infinite ease-in-out;
+
+}
+
+
+.realization-small {
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #80636c;
+
+    margin-bottom: 8px;
+
+}
+
+
+.realization-main {
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #80636c;
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.realization-content h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(
+        48px,
+        13vw,
+        75px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: #8e5c68;
+
+    margin-bottom: 20px;
+
+}
+
+
+.realization-line {
+
+    width: 60px;
+
+    height: 1px;
+
+    margin: 0 auto 25px;
+
+    background: #b76e79;
+
+    opacity: 0.5;
+
+}
+
+
+.realization-button {
+
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 50px;
+
+    background: #fff8f5;
+
+    color: #8e5c68;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            142,
+            92,
+            104,
+            0.18
+        );
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.realization-button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+@keyframes realizationAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* =========================
+   HALAMAN 6 - TERIMA KASIH
+========================= */
+
+.thankyou-page {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff9f6 0%,
+            #f2d9dc 50%,
+            #b9a5b9 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 1.2s;
+
+    z-index: 90;
+
+}
+
+
+.thankyou-page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+.thankyou-content {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 10px;
+
+    animation: thankyouAppear 1.4s ease;
+
+}
+
+
+.thankyou-heart {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 48px;
+
+    color: #b76e79;
+
+    margin-bottom: 5px;
+
+}
+
+
+.thankyou-content h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(
+        48px,
+        13vw,
+        75px
+    );
+
+    font-weight: 400;
+
+    color: #8e5c68;
+
+    margin-bottom: 10px;
+
+}
+
+
+.thankyou-intro {
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #80636c;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   KARTU SURAT
+========================= */
+
+.letter-card {
+
+    position: relative;
+
+    padding: 25px 22px;
+
+    background:
+        rgba(
+            255,
+            248,
+            245,
+            0.85
+        );
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(
+            142,
+            92,
+            104,
+            0.15
+        );
+
+    border:
+        1px solid
+        rgba(
+            183,
+            110,
+            121,
+            0.15
+        );
+
+}
+
+
+.letter-card::before {
+
+    content: "♡";
+
+    position: absolute;
+
+    top: 8px;
+
+    right: 15px;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 25px;
+
+    color: #c58a94;
+
+}
+
+
+.letter-card p {
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #80636c;
+
+    margin-bottom: 14px;
+
+}
+
+
+.letter-card .letter-ending {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 24px;
+
+    line-height: 1.5;
+
+    color: #8e5c68;
+
+    margin-top: 20px;
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================
+   TOMBOL
+========================= */
+
+.thankyou-button {
+
+    margin-top: 22px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #fff8f5;
+
+    color: #8e5c68;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            142,
+            92,
+            104,
+            0.18
+        );
+
+}
+
+
+@keyframes thankyouAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+/* =========================
+   HALAMAN 7 - AMPLOP
+========================= */
+
+.envelope-page {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff9f6 0%,
+            #f2d9dc 50%,
+            #b9a5b9 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 1.2s;
+
+    z-index: 100;
+
+}
+
+
+.envelope-page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+.envelope-content {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    animation: envelopeAppear 1.2s ease;
+
+}
+
+
+.envelope-heart {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 50px;
+
+    color: #b76e79;
+
+}
+
+
+.envelope-content h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(
+        48px,
+        13vw,
+        75px
+    );
+
+    font-weight: 400;
+
+    color: #8e5c68;
+
+    margin-bottom: 8px;
+
+}
+
+
+.envelope-intro {
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #80636c;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================
+   TIGA AMPLOP
+========================= */
+
+.envelope-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    align-items: start;
+
+    justify-items: center;
+
+    width: 100%;
+
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    gap: 10px;
+}
+
+
+.envelope-item {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.envelope-button {
+    width: 78px;
+
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #fff8f5;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            142,
+            92,
+            104,
+            0.18
+        );
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.envelope-button:hover {
+
+    transform:
+        translateY(-5px)
+        rotate(-3deg);
+
+}
+
+
+.envelope-button.opened {
+
+    transform:
+        scale(0.9)
+        rotate(5deg);
+
+    opacity: 0.6;
+
+}
+
+
+.envelope-item p {
+
+    margin-top: 8px;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 21px;
+
+    color: #8e5c68;
+
+}
+
+
+/* =========================
+   PESAN AMPLOP
+========================= */
+
+.envelope-message {
+
+    min-height: 100px;
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(
+            255,
+            248,
+            245,
+            0.85
+        );
+
+    color: #80636c;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            142,
+            92,
+            104,
+            0.12
+        );
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+
+}
+
+
+.envelope-message.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================
+   TOMBOL KE ULANG TAHUN
+========================= */
+
+.birthday-next {
+
+    display: none;
+
+    margin: 20px auto 0;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #fff8f5;
+
+    color: #8e5c68;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            142,
+            92,
+            104,
+            0.18
+        );
+
+}
+
+
+.birthday-next.show {
+
+    display: inline-block;
+
+    animation:
+        envelopeAppear 1s ease;
+
+}
+
+
+@keyframes envelopeAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+/* =========================
+   HALAMAN 8 - ULANG TAHUN
+========================= */
+
+.birthday-page {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf8 0%,
+            #f4dadd 48%,
+            #b9a5b9 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease,
+        visibility 1.5s;
+
+    z-index: 110;
+
+}
+
+
+.birthday-page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+.birthday-content {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    padding: 15px;
+
+    animation:
+        birthdayAppear 1.8s ease;
+
+}
+
+
+.birthday-stars {
+
+    font-size: 22px;
+
+    color: #b76e79;
+
+    letter-spacing: 12px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.birthday-opening {
+
+    font-size: 14px;
+
+    color: #80636c;
+
+    margin-bottom: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================
+   JUDUL
+========================= */
+
+.birthday-content h1 {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: clamp(
+        65px,
+        18vw,
+        105px
+    );
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    color: #8e5c68;
+
+    margin: 5px 0 15px;
+
+}
+
+
+.birthday-heart {
+
+    font-size: 28px;
+
+    color: #b76e79;
+
+    margin-bottom: 8px;
+
+    animation:
+        birthdayHeartbeat 2s infinite ease-in-out;
+
+}
+
+
+.birthday-name {
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #80636c;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =========================
+   FOTO UTAMA
+========================= */
+
+.birthday-photo {
+
+    width: 210px;
+
+    height: 260px;
+
+    margin: 0 auto 25px;
+
+    padding: 7px;
+
+    background: #fffaf8;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(
+            142,
+            92,
+            104,
+            0.22
+        );
+
+    transform: rotate(-2deg);
+
+}
+
+
+.birthday-photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+
+}
+
+
+/* =========================
+   SURAT ULANG TAHUN
+========================= */
+
+.birthday-letter {
+
+    padding: 25px 22px;
+
+    background:
+        rgba(
+            255,
+            248,
+            245,
+            0.88
+        );
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(
+            142,
+            92,
+            104,
+            0.12
+        );
+
+}
+
+
+.birthday-letter p {
+
+    font-size: 14px;
+
+    line-height: 1.95;
+
+    color: #80636c;
+
+    margin-bottom: 18px;
+
+}
+
+
+.birthday-letter .birthday-ending {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    color: #8e5c68;
+
+    margin-top: 22px;
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.birthday-footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding-bottom: 20px;
+
+}
+
+
+.birthday-footer span {
+
+    color: #b76e79;
+
+    font-size: 18px;
+
+}
+
+
+.birthday-footer p {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 25px;
+
+    color: #8e5c68;
+
+    margin: 0;
+
+}
+
+
+/* =========================
+   ANIMASI
+========================= */
+
+@keyframes birthdayAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes birthdayHeartbeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.25);
+
+    }
+
+}
+/* =========================
+   TOMBOL MUSIK
+========================= */
+
+.music-toggle {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 22px;
+
+    width: 48px;
+
+    height: 48px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 248, 245, 0.88);
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 999;
+
+    box-shadow:
+        0 6px 20px
+        rgba(142, 92, 104, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.music-toggle:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+.music-toggle.muted {
+
+    background: rgba(220, 210, 215, 0.8);
+
+    opacity: 0.75;
+
+}
